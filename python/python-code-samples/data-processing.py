@@ -7,6 +7,11 @@ jobs = pd.read_csv("online-job-postings.csv")
 print(jobs.head())
 print(jobs.tail())
 print(jobs['Year'].value_counts())  # count of unique values
+print(jobs.sample(5))
+print(jobs.describe())
+# isnull
+# duplicated
+
 jobs.info()
 
 jobs_clean = jobs.copy()
