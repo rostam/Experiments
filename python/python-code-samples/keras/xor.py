@@ -1,7 +1,7 @@
 import numpy as np
 from keras.utils import np_utils
 import tensorflow as tf
-tf.python.control_flow_ops = tf
+# tf.python.control_flow_ops = tf
 
 # Set random seed
 np.random.seed(42)
@@ -39,3 +39,4 @@ print("\nAccuracy: ", score[-1])
 # Checking the predictions
 print("\nPredictions:")
 print(xor.predict_proba(X))
+
