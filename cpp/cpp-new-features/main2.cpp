@@ -51,4 +51,7 @@ int main() {
     var = 12;
 
     std::cout << std::get<S>(var).i << '\n';
+
+    double res = std::get<std::pair<double, double>>(FindRoots(0.4, 0.9, 0.4)).first;
+    std::cout << res << std::endl;
 }
