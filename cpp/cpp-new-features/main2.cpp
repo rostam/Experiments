@@ -39,6 +39,10 @@ struct S
     int i;
 };
 
+//inline variables
+class MyClass {static inline const std::string s_val = "Hello";};
+
+
 int main() {
 
     // Without the monostate type this declaration will fail.
@@ -59,4 +63,8 @@ int main() {
 
     auto [ a, b, c ] = std::tuple<int,double,bool>(1,1.2,true);
     std::cout << a << " " << b << " " << c << std::endl;
+
+    std::pair mypair{42,1.5};
+    std::cout << mypair.first, mypair.second;
+
 }
