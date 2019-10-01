@@ -3,6 +3,7 @@
 //
 #include <variant>
 #include <cmath>
+#include <tuple>
 // aX^2 + bX + c
 using TRoots = std::variant<std::monostate,
         double,
@@ -54,4 +55,8 @@ int main() {
 
     double res = std::get<std::pair<double, double>>(FindRoots(0.4, 0.9, 0.4)).first;
     std::cout << res << std::endl;
+
+
+    auto [ a, b, c ] = std::tuple<int,double,bool>(1,1.2,true);
+    std::cout << a << " " << b << " " << c << std::endl;
 }
