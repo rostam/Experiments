@@ -3,4 +3,5 @@ project(CPP17)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(CPP17 functional_features.cpp)
+add_executable(CPP17 eigen_test.cpp)
+target_link_libraries(CPP17 blas)
