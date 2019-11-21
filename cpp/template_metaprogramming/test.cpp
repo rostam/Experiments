@@ -2,6 +2,9 @@
 // Created by rostam on 20.11.19.
 //
 
+#include <cmath>
+#include <iostream>
+
 template<int N>
 constexpr int fibonacci2()
 {
@@ -12,35 +15,35 @@ constexpr int fibonacci2()
 }
 
 class psc_f {
+private:
+    double alpha;
+
 public:
-    psc_f(double alpha) : alpha(alpha)
+    explicit psc_f(double alpha_) : alpha(alpha_) {};
 
     double operator()(double x) const {
         return sin(alpha * x) + cos(x);
     }
-
-private:
-    double alpha;
 };
 
 template <typename F, typename T>
 class derivative {
+private:
+    const F &f;
+    T h;
+
 public:
-    derivative(const F &f, const T &t) : f(f), t(t) {}
+    derivative(const F &f, T t) : f(f), h(t) {}
 
     T operator()(const T &x) const {
         return (f(x + h) - f(x)) / h;
     }
-
-private:
-    const F &f;
-    T t;
 };
 
 int main() {
     fibonacci2<10>();
 
-    using d_psc_f = derivative<psc_f, double>;
     psc_f psc_o(1.0);
-    d_psc_f d_psc_o(psc_f, 0.001);
+    derivative<psc_f, double> d_psc_o(psc_f, 0.001);
+    std::cout << "derivative of sin(0) + cos(0) is " << d_psc_o(0.0) << std::endl;
 }
