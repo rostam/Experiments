@@ -39,4 +39,8 @@ private:
 
 int main() {
     fibonacci2<10>();
+
+    using d_psc_f = derivative<psc_f, double>;
+    psc_f psc_o(1.0);
+    d_psc_f d_psc_o(psc_f, 0.001);
 }
