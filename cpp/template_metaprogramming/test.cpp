@@ -183,9 +183,6 @@ make_nth_derivative(const F& f, const T& h)
 }
 #endif
 
-
-
-
 template <unsigned N, typename F, typename T>
 nth_derivative<F, T, N>
 make_nth_derivative(const F& f, const T& h)
