@@ -7,5 +7,11 @@ This repository contains my experiments regarding various research ideas in diff
   - nonhomo: a first implementation of nonhomomorphism idea
   - template_metaprogramming: some examples for this feature in c++
 - python
+  - NonHomomorphism
+  - TF
+  - partial_coloring
+  - pyMetis
+  - python-code-samples
 - rust
+  - rust_gtea
 
