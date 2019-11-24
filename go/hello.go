@@ -16,6 +16,14 @@ func f() (int, int) {
   return 5, 6
 }
 
+func first() {
+  fmt.Println("1st")
+}
+
+func second() {
+  fmt.Println("2nd")
+}
+
 func main() {
     fmt.Println("Hello World")
     elements := map[string]map[string]string{
@@ -69,10 +77,15 @@ func main() {
   fmt.Println(average(xs))
 
   x, y := f()
+  fmt.Println(x,y)
+
 
   add := func(x, y int) int {
     return x + y
   }
   fmt.Println(add(1,1))
+
+  defer second()
+  first()
 
 }
