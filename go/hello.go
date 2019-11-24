@@ -88,4 +88,16 @@ func main() {
   defer second()
   first()
 
+  //This does not go into recover()
+//  panic("PANIC")
+//  str := recover()
+//  fmt.Println(str)
+
+  defer func() {
+    str := recover()
+    fmt.Println(str)
+  }()
+  panic("PANIC")//this goes to recover
+  
+
 }
