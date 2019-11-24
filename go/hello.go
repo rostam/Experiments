@@ -69,4 +69,10 @@ func main() {
   fmt.Println(average(xs))
 
   x, y := f()
+
+  add := func(x, y int) int {
+    return x + y
+  }
+  fmt.Println(add(1,1))
+
 }
