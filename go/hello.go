@@ -1,6 +1,11 @@
 package main
 
 import "fmt"
+type Circle struct {
+  x float64
+  y float64
+  r float64
+}
 
 // computation of average of an array
 func average(xs []float64) float64 {
@@ -99,5 +104,8 @@ func main() {
   }()
   panic("PANIC")//this goes to recover
   
+
+  var c Circle
+  fmt.Println(c.x,c.y,c.r)
 
 }
