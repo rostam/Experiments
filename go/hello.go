@@ -29,6 +29,13 @@ func second() {
   fmt.Println("2nd")
 }
 
+
+func ff(n int) {
+  for i := 0; i < 10; i++ {
+    fmt.Println(n, ":", i)
+  }
+}
+
 func main() {
     fmt.Println("Hello World")
     elements := map[string]map[string]string{
@@ -98,14 +105,19 @@ func main() {
 //  str := recover()
 //  fmt.Println(str)
 
-  defer func() {
-    str := recover()
-    fmt.Println(str)
-  }()
-  panic("PANIC")//this goes to recover
+//  defer func() {
+//    str := recover()
+//    fmt.Println(str)
+//  }()
+//  panic("PANIC")//this goes to recover
   
 
   var c Circle
   fmt.Println(c.x,c.y,c.r)
 
+   for i := 0; i < 10; i++ {
+    go ff(i)
+  }
+  var input string
+  fmt.Scanln(&input)
 }
