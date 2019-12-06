@@ -8,6 +8,9 @@ This repository contains my experiments regarding various research ideas in diff
   - template_metaprogramming: some examples for this feature in c++
 - go
   - hello.go: basic lanaguage feature
+- julia
+  - first: basic language feature
+  - string_basics: basic string functions
 - python
   - NonHomomorphism
   - TF
