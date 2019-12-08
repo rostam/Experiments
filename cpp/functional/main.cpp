@@ -22,9 +22,13 @@ double average_score(const std::vector<int>& scores) {
     return std::accumulate(scores.cbegin(), scores.cend(), 0) / (double)scores.size();
 }
 
-double average_score_reduce(const std::vector<int>& scores) {
+//double average_score_reduce(const std::vector<int>& scores) {
 //    return std::experimental::reduce(std::experimental::execution::par, scores.cbegin(), scores.cend(), 0) / (double)scores.size();
-    return std::reduce(scores.cbegin(), scores.cend(), 0) / (double)scores.size();
+//    return std::reduce(scores.cbegin(), scores.cend(), 0) / (double)scores.size();
+//}
+
+double scores_product(const std::vector<int>& scores) {
+    return std::accumulate(scores.cbegin(), scores.cend(), 1, std::multiplies<int>());
 }
 
 int main() {
