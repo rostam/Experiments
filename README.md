@@ -3,7 +3,7 @@ This repository contains my experiments regarding various research ideas in diff
 
 - c++
   - cpp-new-features: experimenting the new features of cpp 10/14/17/20
-  - functional: functional features of c++
+  - functional: functional features of c++17 and further
   - nn: a simple neural network in c++
   - nonhomo: a first implementation of nonhomomorphism idea
   - template_metaprogramming: some examples for this feature in c++
