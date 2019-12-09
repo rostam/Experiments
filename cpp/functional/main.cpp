@@ -35,5 +35,7 @@ int main() {
     std::vector<std::string> files = {"file1.txt", "file2.txt"};
     auto res = count_lines_in_files(files);
     std::cout << res[0] << " " << res[1] << std::endl;
+
+    auto f = [] <typename T> (T first, T second) { return first < second;};
     return 0;
 }
