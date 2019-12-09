@@ -37,5 +37,6 @@ int main() {
     std::cout << res[0] << " " << res[1] << std::endl;
 
     auto f = [] <typename T> (T first, T second) { return first < second;};
+    cout << "res " << f(10,11);
     return 0;
 }
