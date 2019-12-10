@@ -31,6 +31,12 @@ double scores_product(const std::vector<int>& scores) {
     return std::accumulate(scores.cbegin(), scores.cend(), 1, std::multiplies<int>());
 }
 
+auto greater_curried(double first) {
+    return [first](double second) {
+        return first > second;
+    };
+}
+
 int main() {
     std::vector<std::string> files = {"file1.txt", "file2.txt"};
     auto res = count_lines_in_files(files);
@@ -42,5 +48,8 @@ int main() {
     std::vector<int> v {1,10,3,4,5,60,54};
     std::sort(v.begin(), v.end(), std::greater<>());
     std::cout << v[0];
+
+    greater_curried(2);
+    greater_curried(2)(3);
     return 0;
 }
