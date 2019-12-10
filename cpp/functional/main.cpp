@@ -37,6 +37,10 @@ int main() {
     std::cout << res[0] << " " << res[1] << std::endl;
 
     auto f = [] <typename T> (T first, T second) { return first < second;};
-    cout << "res " << f(10,11);
+    std::cout << "res " << f(10,11) << std::endl;
+
+    std::vector<int> v {1,10,3,4,5,60,54};
+    std::sort(v.begin(), v.end(), std::greater<>());
+    std::cout << v[0];
     return 0;
 }
