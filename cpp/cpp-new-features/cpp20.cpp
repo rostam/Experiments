@@ -26,7 +26,21 @@ template <typename Ret, typename... Args> struct fnptr<Ret(Args...)> {
     Ret operator()(Args... args) const { return wrap(obj, args...); }
 };
 
-int main() {
-    cerr << my_callback(1);
-}
+//int main() {
+//    cerr << my_callback(1);
+//}
+
+ void hello() { printf("hello\n"); }
+
+ fnptr<void()> x;
+
+ int main() {
+    int q=1;
+    x = hello;
+    x();
+    x = [&q] { q++; printf("again\n"); };
+    x();
+
+     cerr << my_callback(1);
+ }
 
