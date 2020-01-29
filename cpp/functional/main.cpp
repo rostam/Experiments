@@ -28,7 +28,7 @@ double average_score(const std::vector<int>& scores) {
 //}
 
 double scores_product(const std::vector<int>& scores) {
-    return std::accumulate(scores.cbegin(), scores.cend(), 1, std::multiplies<int>());
+    return std::accumulate(scores.cbegin(), scores.cend(), 1, std::multiplies<>());
 }
 
 auto greater_curried(double first) {
