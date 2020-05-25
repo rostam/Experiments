@@ -6,6 +6,10 @@
 #include <functional>
 #include <vector>
 #include <iostream>
+#include <variant>
+
+template<class... Ts> struct overload : Ts... { using Ts::operator()...; };
+template<class... Ts> overload(Ts...) -> overload<Ts...>;
 
 int main() {
     using std::placeholders::_1;
@@ -28,9 +32,17 @@ int main() {
     return a < b;
     });
 
-    std::cout << "number of comparisons: " << compCounter << '\n';
+    std::cout << "\nnumber of comparisons: " << compCounter << '\n';
 
     for (auto& v : vec)
-    std::cout << v << ", ";
+        std::cout << v << ", ";
+
+    std::cout << std::endl;
+    std::variant<int, float, std::string> intFloatString { "Hello" };
+    std::visit(overload  { [](const int& i) { std::cout << "int: " << i; },
+                            [](const float& f) { std::cout << "float: " << f; },
+                                [](const std::string& s) { std::cout << "string: " << s; }
+                        },
+                                intFloatString);
     return 0;
 }
