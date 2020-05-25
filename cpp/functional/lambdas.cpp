@@ -11,6 +11,11 @@
 template<class... Ts> struct overload : Ts... { using Ts::operator()...; };
 template<class... Ts> overload(Ts...) -> overload<Ts...>;
 
+
+struct Circle { void Draw() const { } };
+struct Square { void Draw() const { } };
+struct Triangle { void Draw() const { } };
+
 int main() {
     using std::placeholders::_1;
 
@@ -44,5 +49,11 @@ int main() {
                                 [](const std::string& s) { std::cout << "string: " << s; }
                         },
                                 intFloatString);
+
+    std::variant<Circle, Square, Triangle> shape;
+    shape = Triangle{};
+    auto callDraw = [](auto& sh) { sh.Draw(); };
+    std::visit(callDraw, shape);
+
     return 0;
 }
