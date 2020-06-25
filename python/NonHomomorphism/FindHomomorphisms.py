@@ -11,18 +11,18 @@ H = nx.petersen_graph()
 G = nx.complete_graph(4)
 
 
-def find_a_homomorphism(G, H):
+def find_a_homomorphism(G, H, num_of_subsets):
     G_nodes = G.nodes()
     H_nodes = H.nodes()
 
     size_of_set = 0
-    num_of_subsets = 0
+    # num_of_subsets = 0
     if len(G_nodes) >= len(H_nodes):
         size_of_set = len(G_nodes)
-        num_of_subsets = len(H_nodes)
+        # num_of_subsets = len(H_nodes)
     else:
         size_of_set = len(G_nodes)
-        num_of_subsets = len(G_nodes)
+        # num_of_subsets = len(G_nodes)
 
     iterable = string.ascii_lowercase[0:size_of_set]
     is_homomorphism_found = False
@@ -84,3 +84,23 @@ def find_a_homomorphism(G, H):
     # nx.draw(G, with_labels=True)
     # plt.draw()
     # plt.show()
+
+
+def handle_one_g6_string(G, g6_string_H):
+    H = nx.from_graph6_bytes(bytes(g6_string_H, 'ascii'))
+    part = []
+    for j in range(2, len(H) + 1):
+        part = find_a_homomorphism(G, H, j)
+        if len(part) != 0:
+            break
+
+    return part
+    # print(line, len(part))
+    # self.assertTrue(len(part) == 0)
+    # if len(part) == 0:
+        # print(line)
+        # f = plt.figure()
+        # nx.draw(H, ax=f.add_subplot(111))
+        # f.savefig(line + ".png")
+        # i = i + 1
+        # return

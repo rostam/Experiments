@@ -27,18 +27,7 @@ class TestStringMethods(unittest.TestCase):
                 i = 0
                 for line in data.split("\n"):
                     if line != "":
-                        # print(line)
-                        H = nx.from_graph6_bytes(bytes(line,'ascii'))
-                        part = fh.find_a_homomorphism(peterson, H)
-                        # self.assertTrue(len(part) == 0)
-
-                        if len(part) != 0:
-                            print(line)
-                            f = plt.figure()
-                            nx.draw(H, ax=f.add_subplot(111))
-                            f.savefig(str(i)+".png")
-                            i = i + 1
-
+                       fh. handle_one_g6_string(peterson, line)
 
 if __name__ == '__main__':
     unittest.main()
