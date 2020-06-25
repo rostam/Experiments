@@ -47,8 +47,7 @@ int main() {
     std::visit(overload  { [](const int& i) { std::cout << "int: " << i; },
                             [](const float& f) { std::cout << "float: " << f; },
                                 [](const std::string& s) { std::cout << "string: " << s; }
-                        },
-                                intFloatString);
+                         }, intFloatString);
 
     std::variant<Circle, Square, Triangle> shape;
     shape = Triangle{};
