@@ -27,7 +27,7 @@ class TestStringMethods(unittest.TestCase):
                 i = 0
                 for line in data.split("\n"):
                     if line != "":
-                       fh. handle_one_g6_string(peterson, line)
+                       fh.handle_one_g6_string(peterson, line)
 
 if __name__ == '__main__':
     unittest.main()
