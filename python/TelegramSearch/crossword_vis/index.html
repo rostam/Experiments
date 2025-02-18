@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crossword</title>
+    <script src="d3.v7.min.js"></script>
+    <script src="crossword.js"></script>
+    <script src="prepare_crossword.js"></script>
+    <style>
+        table {
+        direction: rtl;
+        font-family: Nazli;
+        font-size: 20px;
+        }
+
+        #crossword.td {
+          width: 25px;
+          height: 25px;
+        }
+
+        .crossword_cells {
+          text-align:center;
+          width:25px;
+          height:25px;
+          border:0;
+          background: none;
+          box-shadow: none;
+          border-radius: 0px;
+          font-size: 20px;
+          color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="puzzle-piece_page">
+        <h3 id="crossword_question"></h3>
+<!--        <button class="button button5" onclick="Hint()" id="nextQuestion">Hint</button>-->
+        <table id="crossword"></table>
+        <table class="question_table" id="questions">
+            <tr><th align="right">افقی</th><th align="right">عمودی</th></tr>
+            <tr><td id="across_questions"></td><td id="down_questions"></td></tr>
+        </table>
+    </div>
+</html>
