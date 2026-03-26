@@ -124,7 +124,6 @@ class homsearch_state {
         if (f_) {
             for (unsigned int i = 0; i < search->G.size(); i++) {
                 if ((*f_)[i] != -1) {
-//                    cout << i << " -> " << (*f_)[i] << "\n";
                     if (! set_map(i, (*f_)[i])) {
                         // Such partial mapping is not extendible!
                         state_valid = false;
@@ -189,8 +188,6 @@ class homsearch_state {
 
 #endif // LIMIT_D3
 #endif // LIMIT_D2
-
-//        cout << "set_map(" << v << ", " << fv << ")\n    N1G=" << N1G << " N1H=" << N1H << "\n    N2G=" << N2G << " N2H=" << N2H << "\n";
 
         if (search->retract_mode) {
 
@@ -287,10 +284,6 @@ void homsearch_impl<size_lim>::search_state(const homsearch_state<size_lim> &s, 
     int v = -1;
     int min_cand = H.size() + 1;
     int max_deg = -1;
-
-//    cout << "\nsearch d = " << depth << " / " << max_depth << "\n";
-//    for (unsigned int i = 0; i < G.size(); i ++)
-//        cout << i << " " << s.f[i] << " " << s.candidates[i] << "\n";
 
     for (unsigned int i = 0; i < G.size(); i ++) {
         int ccount = s.candidates[i].count();

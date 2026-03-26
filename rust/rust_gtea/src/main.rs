@@ -5,10 +5,6 @@ use petgraph::Graph;
 use petgraph::visit::Dfs;
 use petgraph::dot::{Dot, Config};
 fn main() {
-    let width1 = 30;
-    let height1 = 50;
-
-
     let mut v = Vec::new();
 
     v.push((1,2));
@@ -17,21 +13,6 @@ fn main() {
     v.push((3,4));
 
     let adj_l = adj_list(v);
-
-   /* procedure DFS-iterative(G,v):
-      let S be a stack
-      S.push(v)
-      while S is not empty
-        v = S.pop()
-        if v is not labeled as discovered:
-          label v as discovered
-          for all edges from v to w in G.adjacentEdges(v) do
-            S.push(w)
-*/
-    println!(
-        "The area of the rectangle is {} square pixels.",
-        area(width1, height1)
-    );
 
     println!("{:?}", adj_l[&1]);
     println!("{:?}", adj_l);
@@ -110,8 +91,4 @@ fn adj_list(elist: Vec<(i32, i32)>) -> AdjList {
     adjacency_list
 }
 
-
-fn area(width: u32, height: u32) -> u32 {
-    width * height
-}
 

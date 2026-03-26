@@ -3,12 +3,6 @@ module Main (main) where
 import Data.Graph.Inductive
 import Data.List (nub, sort, (\\))
 import qualified Data.Map as Map
-import Lib
-
--- main :: IO ()
--- main = someFunc
-
-
 -- Represents the graph coloring result: a mapping from node to color.
 type Coloring = Map.Map Node Int
 

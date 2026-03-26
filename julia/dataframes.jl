@@ -1,6 +1,6 @@
 using DataFrames
 showln(x) = (show(x); println())
-# TODO: needs more links to docs.
+# Docs: https://dataframes.juliadata.org/stable/
 
 # A DataFrame is an in-memory database
 df = DataFrame(A = [1, 2], B = [ℯ, π], C = ["xx", "xy"])

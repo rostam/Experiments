@@ -1,3 +1,4 @@
+# Note: uses TensorFlow 1.x API. For TF2, use eager execution instead.
 import tensorflow as tf
 
 x = tf.Variable(initial_value=3.0)

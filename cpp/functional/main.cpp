@@ -3,9 +3,6 @@
 #include <algorithm>
 #include <fstream>
 #include <numeric>
-//#include <execution>
-//#include <experimental/numeric>
-//#include <ranges>
 
 int count_lines(const std::string& filename) {
     std::ifstream in(filename);
@@ -22,11 +19,6 @@ double average_score(const std::vector<int>& scores) {
     return std::accumulate(scores.cbegin(), scores.cend(), 0) / (double)scores.size();
 }
 
-//double average_score_reduce(const std::vector<int>& scores) {
-//    return std::experimental::reduce(std::experimental::execution::par, scores.cbegin(), scores.cend(), 0) / (double)scores.size();
-//    return std::reduce(scores.cbegin(), scores.cend(), 0) / (double)scores.size();
-//}
-
 double scores_product(const std::vector<int>& scores) {
     return std::accumulate(scores.cbegin(), scores.cend(), 1, std::multiplies<>());
 }
@@ -38,7 +30,7 @@ auto greater_curried(double first) {
 }
 
 int main() {
-    std::vector<std::string> files = {"file1.txt", "file2.txt"};
+    std::vector<std::string> files = {__FILE__, __FILE__};
     auto res = count_lines_in_files(files);
     std::cout << res[0] << " " << res[1] << std::endl;
 

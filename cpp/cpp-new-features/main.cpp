@@ -72,9 +72,6 @@ int main() {
               << std::endl;
     auto abc = {1, 2, 3};
     std::cout << "The first elemetn of initizer list: " << *std::begin(abc);
-    // The following should work in CPP 17
-    //auto b = {1};
-    //std::cout << b;
 
     auto test = SumWithOne(1, 2, 3, 4);
     std::cout << "The results of compact variadic template usage: " << test << std::endl;
@@ -95,7 +92,6 @@ int main() {
     //Rvalue references
     int x = 0;
     int& x1 = x;
-//    int&& xr = x; compiler error
     int&& xr2 = 0;
 
 
@@ -129,17 +125,12 @@ int main() {
     Color cc = Color::Red;
 
     const int xxxx = 123;
-    //constexpr const int& y = xxxx; // error -- constexpr variable `y` must be initialized by a constant expression
 
     std::tuple<int,int,int> ttt = {1,2,3};
     auto [aaa,bbb,ccc] = ttt;
 
 
-    int aa = square(2);  // mov DWORD PTR [rbp-4], 4
-
-//    int b = square2(2); // mov edi, 2
-// call square2(int)
-// mov DWORD PTR [rbp-8], eax
+    int aa = square(2);
 
     return 0;
 }

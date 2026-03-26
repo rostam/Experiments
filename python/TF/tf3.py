@@ -1,3 +1,4 @@
+# Note: uses TensorFlow 1.x API. For TF2, use eager execution instead.
 # Initialize session
 import tensorflow as tf
 sess = tf.InteractiveSession()

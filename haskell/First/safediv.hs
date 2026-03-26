@@ -1,6 +1,3 @@
-import Control.Applicative
-import Language.Haskell.TH (safe, prim)
-import System.Posix (QueueSelector(OutputQueue))
 safeDivide :: Int -> Int -> Maybe Int
 safeDivide _ 0 = Nothing
 safeDivide x y = Just (x `div` y)

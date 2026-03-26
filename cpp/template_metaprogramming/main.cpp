@@ -10,13 +10,6 @@ auto get_value(T t) {
         return t;
 }
 
-template<int  N>
-constexpr int fibonacci() {return fibonacci<N-1>() + fibonacci<N-2>(); }
-template<>
-constexpr int fibonacci<1>() { return 1; }
-template<>
-constexpr int fibonacci<0>() { return 0; }
-
 template<int N>
 constexpr int fibonacci2()
 {
@@ -43,7 +36,6 @@ int main() {
     std::cout << get_value(pi.get()) << "\n";
     std::cout << get_value(i) << "\n";
 
-    std::cout << fibonacci<10>() << std::endl;
     std::cout << fibonacci2<10>() << std::endl;
     return 0;
 }
